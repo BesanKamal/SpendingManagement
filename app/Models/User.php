@@ -23,6 +23,16 @@ class User extends Authenticatable
         'password',
     ];
 
+
+    public function incomes()
+    {
+        return $this->hasMany(Income::class, 'user_id', 'id');
+    }
+
+    public function spendings()
+    {
+        return $this->hasMany(Spending::class, 'user_id', 'id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
